@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request
 from werkzeug.utils import secure_filename
 from sklearn.preprocessing import StandardScaler
 import tensorflow as tf
@@ -23,7 +23,7 @@ def get_input():
         file = request.files['file']
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
-            new_filename = filename.split('.')[0] + '.csv's
+            new_filename = filename.split('.')[0] + '.csv'
             file.save(os.path.join('C:/Users/phili/OneDrive/Desktop/DataScience/ds-final-project/input/', new_filename))
             
 
